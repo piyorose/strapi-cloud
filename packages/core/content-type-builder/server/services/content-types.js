@@ -34,7 +34,7 @@ const getRestrictRelationsTo = (contentType = {}) => {
  * Format a contentType info to be used by the front-end
  * @param {Object} contentType
  */
-const formatContentType = (contentType) => {
+const formatContentType = (contentType, { ee = false }) => {
   const { uid, kind, modelName, plugin, collectionName, info } = contentType;
 
   return {
@@ -42,7 +42,7 @@ const formatContentType = (contentType) => {
     plugin,
     apiID: modelName,
     schema: {
-      ...contentTypesUtils.getOptions(contentType),
+      ...contentTypesUtils.getOptions(contentType, { ee }),
       displayName: info.displayName,
       singularName: info.singularName,
       pluralName: info.pluralName,

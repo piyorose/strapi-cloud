@@ -24,7 +24,9 @@ module.exports = {
 
     const contentTypes = Object.keys(strapi.contentTypes)
       .filter((uid) => !kind || _.get(strapi.contentTypes[uid], 'kind', 'collectionType') === kind)
-      .map((uid) => contentTypeService.formatContentType(strapi.contentTypes[uid]));
+      .map((uid) =>
+        contentTypeService.formatContentType(strapi.contentTypes[uid], { ee: strapi.EE })
+      );
 
     ctx.send({
       data: contentTypes,

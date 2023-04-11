@@ -1,7 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
-const { has } = require('lodash/fp');
+const { has, get, omit, merge } = require('lodash/fp');
 
 const SINGLE_TYPE = 'singleType';
 const COLLECTION_TYPE = 'collectionType';
@@ -82,7 +82,15 @@ const isVisibleAttribute = (model, attributeName) => {
   return getVisibleAttributes(model).includes(attributeName);
 };
 
-const getOptions = (model) => _.assign({ draftAndPublish: false }, _.get(model, 'options', {}));
+const getOptions = (model, { ee = false }) => {
+  const defaultOptions = { draftAndPublish: false };
+  const options = merge(defaultOptions, get('options', omit(['ee'], model)));
+
+  if (ee) {
+    return merge(options, get('options.ee', model));
+  }
+  return options;
+};
 const hasDraftAndPublish = (model) => _.get(model, 'options.draftAndPublish', false) === true;
 
 const isDraft = (data, model) =>
