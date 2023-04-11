@@ -28,7 +28,11 @@ function contentTypeMiddleware(strapi) {
     const { reviewWorkflows, ...contentType } = ctx.request.body.contentType;
 
     if (typeof reviewWorkflows === 'boolean') {
-      ctx.request.body.contentType = set('options.reviewWorkflows', reviewWorkflows, contentType);
+      ctx.request.body.contentType = set(
+        'options.ee.reviewWorkflows',
+        reviewWorkflows,
+        contentType
+      );
     }
   };
   strapi.server.router.use('/content-type-builder/content-types/:uid?', (ctx, next) => {
