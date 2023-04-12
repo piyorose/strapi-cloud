@@ -27,7 +27,7 @@ const DynamicTable = ({
 }) => {
   const { runHookWaterfall } = useStrapiApp();
   const hasDraftAndPublish = layout.contentType.options?.draftAndPublish ?? false;
-  const hasReviewWorkflows = layout.contentType.options?.reviewWorkflows ?? false;
+  const hasReviewWorkflows = layout.contentType.options?.ee?.reviewWorkflows ?? false;
   const { formatMessage } = useIntl();
   const displayedHeaders = useSelector(selectDisplayedHeaders);
 

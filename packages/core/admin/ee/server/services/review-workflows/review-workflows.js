@@ -15,7 +15,7 @@ const { getDefaultWorkflow } = require('../../utils/review-workflows');
 
 const getContentTypeUIDsWithActivatedReviewWorkflows = pipe([
   // Pick only content-types with reviewWorkflows options set to true
-  pickBy(get('options.reviewWorkflows')),
+  pickBy(get('options.ee.reviewWorkflows')),
   // Get UIDs
   keys,
 ]);
