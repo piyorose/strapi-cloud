@@ -2,8 +2,7 @@
 
 const path = require('path');
 const fs = require('fs-extra');
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
+const { RspackCLI } = require('@rspack/cli');
 const { isUsingTypeScript } = require('@strapi/typescript-utils');
 const chalk = require('chalk');
 
@@ -57,7 +56,7 @@ async function build({ appDir, buildDestDir, env, forceBuild, optimize, options,
     tsConfigFilePath,
   });
 
-  const compiler = webpack(config);
+  const compiler = await new RspackCLI().createCompiler(config);
 
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
@@ -151,21 +150,21 @@ async function watchAdmin({ appDir, browser, buildDestDir, host, options, plugin
 
   const webpackConfig = getCustomWebpackConfig(appDir, args);
 
-  const compiler = webpack(webpackConfig);
+  const compiler = await new RspackCLI().createCompiler(webpackConfig);
 
   const devServerArgs = {
     ...args.devServer,
     ...webpackConfig.devServer,
   };
 
-  const server = new WebpackDevServer(devServerArgs, compiler);
+  // const server = new WebpackDevServer(devServerArgs, compiler);
 
   const runServer = async () => {
     console.log(chalk.green('Starting the development server...'));
     console.log();
     console.log(chalk.green(`Admin development at http://${host}:${port}${options.adminPath}`));
 
-    await server.start();
+    compiler.watch();
   };
 
   runServer();

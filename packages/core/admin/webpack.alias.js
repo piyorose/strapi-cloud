@@ -4,20 +4,15 @@ const path = require('path');
 const findRoot = require('find-root');
 
 const aliasExactMatch = [
-  '@strapi/design-system',
-  '@strapi/helper-plugin',
-  '@strapi/icons',
   'date-fns',
   'formik',
   'history',
   'immer',
   'qs',
   'lodash',
-  'react',
   'react-copy-to-clipboard',
   'react-dnd',
   'react-dnd-html5-backend',
-  'react-dom',
   'react-error-boundary',
   'react-fast-compare',
   'react-helmet',

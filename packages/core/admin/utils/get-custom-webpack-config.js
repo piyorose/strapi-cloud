@@ -3,12 +3,11 @@
 const path = require('path');
 const chalk = require('chalk');
 const _ = require('lodash');
-const webpack = require('webpack');
 const fs = require('fs-extra');
-const getWebpackConfig = require('../webpack.config');
+const getWebpackConfig = require('../rspack.config');
 
 const getCustomWebpackConfig = (dir, config) => {
-  const adminConfigPath = path.join(dir, 'src', 'admin', 'webpack.config.js');
+  const adminConfigPath = path.join(dir, 'src', 'admin', 'rspack.config.js');
 
   let webpackConfig = getWebpackConfig(config);
 
@@ -21,7 +20,7 @@ const getCustomWebpackConfig = (dir, config) => {
         webpackConfig.devServer = config.devServer;
       }
 
-      webpackConfig = webpackAdminConfig(webpackConfig, webpack);
+      webpackConfig = webpackAdminConfig(webpackConfig);
 
       if (!webpackConfig) {
         console.error(

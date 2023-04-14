@@ -1,12 +1,10 @@
 'use strict';
 
 const path = require('path');
-const webpack = require('webpack');
 const { isObject } = require('lodash');
-// eslint-disable-next-line import/no-extraneous-dependencies
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const { RspackCLI } = require('@rspack/cli');
 
-const webpackConfig = require('../webpack.config');
+const rspackConfig = require('../rspack.config');
 const getPluginsPath = require('../utils/get-plugins-path');
 const {
   getCorePluginsPath,
@@ -15,9 +13,6 @@ const {
 } = require('./create-plugins-file');
 
 const PLUGINS_TO_INSTALL = ['i18n', 'users-permissions'];
-
-// Wrapper that outputs the webpack speed
-const smp = new SpeedMeasurePlugin();
 
 const buildAdmin = async () => {
   const entry = path.join(__dirname, '..', 'admin', 'src');
@@ -56,12 +51,9 @@ const buildAdmin = async () => {
     tsConfigFilePath,
   };
 
-  const config =
-    process.env.MEASURE_BUILD_SPEED === 'true'
-      ? smp.wrap(webpackConfig(args))
-      : webpackConfig(args);
+  const config = rspackConfig(args);
 
-  const compiler = webpack(config);
+  const compiler = await new RspackCLI().createCompiler(config);
 
   console.log('Building the admin panel');
 

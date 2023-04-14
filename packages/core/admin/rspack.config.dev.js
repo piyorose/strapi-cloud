@@ -3,14 +3,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const path = require('path');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const { DuplicateReporterPlugin } = require('duplicate-dependencies-webpack-plugin');
 const getPluginsPath = require('./utils/get-plugins-path');
-const webpackConfig = require('./webpack.config');
+const webpackConfig = require('./rspack.config');
 
 module.exports = () => {
   const analyzeBundle = process.env.ANALYZE_BUNDLE;
-  const analyzeDuplicateDependencies = process.env.ANALYZE_DEPS;
   const entry = path.join(__dirname, 'admin', 'src');
   const dest = path.join(__dirname, 'build');
 
@@ -47,13 +44,9 @@ module.exports = () => {
 
   const config = webpackConfig(args);
 
-  if (analyzeBundle) {
-    config.plugins.push(new BundleAnalyzerPlugin());
-  }
-
-  if (analyzeDuplicateDependencies === 'true') {
-    config.plugins.push(new DuplicateReporterPlugin());
-  }
+  // if (analyzeBundle) {
+  //   config.plugins.push(new BundleAnalyzerPlugin());
+  // }
 
   return {
     ...config,
