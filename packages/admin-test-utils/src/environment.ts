@@ -110,14 +110,9 @@ Object.defineProperty(window, 'prompt', {
  * URL
  * -----------------------------------------------------------------------------------------------*/
 
-Object.defineProperty(window, 'URL', {
-  writable: true,
-  value: {
-    createObjectURL: jest
-      .fn()
-      .mockImplementation((file) => `http://localhost:4000/assets/${file.name}`),
-  },
-});
+window.URL.createObjectURL = jest
+  .fn()
+  .mockImplementation((file) => `http://localhost:4000/assets/${file.name}`);
 
 /* -------------------------------------------------------------------------------------------------
  * createRange

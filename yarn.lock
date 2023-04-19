@@ -6962,10 +6962,10 @@ __metadata:
   resolution: "@strapi/admin-test-utils@workspace:packages/admin-test-utils"
   dependencies:
     "@testing-library/jest-dom": 5.16.5
-    eslint-config-custom: 4.9.1
+    eslint-config-custom: 4.9.2
     jest-styled-components: 7.1.1
     redux: ^4.2.1
-    tsconfig: 4.9.1
+    tsconfig: 4.9.2
   peerDependencies:
     redux: ^4.2.1
   languageName: unknown
