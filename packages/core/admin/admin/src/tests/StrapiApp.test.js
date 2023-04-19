@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { fixtures } from '@strapi/admin-test-utils/lib';
+import { Fixtures } from '@strapi/admin-test-utils';
 import { Components, Fields } from '../core/apis';
 import StrapiApp from '../StrapiApp';
 import appReducers from '../reducers';
@@ -21,7 +21,7 @@ describe('ADMIN | StrapiApp', () => {
 
     const store = app.createStore();
 
-    expect(store.getState()).toEqual(fixtures.store.state);
+    expect(store.getState()).toEqual(Fixtures.Store.state);
   });
 
   describe('Hook api', () => {

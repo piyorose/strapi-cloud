@@ -1,11 +1,11 @@
-import { fixtures } from '@strapi/admin-test-utils/lib';
+import { Fixtures } from '@strapi/admin-test-utils';
 import { makeSelectModels } from '../selectors';
 
 describe('Content Manager | App | selectors', () => {
   let store;
 
   beforeEach(() => {
-    store = { ...fixtures.store.state };
+    store = { ...Fixtures.Store.state };
   });
 
   describe('makeSelectModels', () => {

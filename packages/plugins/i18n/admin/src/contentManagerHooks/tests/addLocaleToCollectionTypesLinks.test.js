@@ -1,4 +1,4 @@
-import { fixtures } from '@strapi/admin-test-utils/lib';
+import { Fixtures } from '@strapi/admin-test-utils';
 import addLocaleToCollectionTypesLinksHook from '../addLocaleToCollectionTypesLinks';
 
 describe('i18n | contentManagerHooks | addLocaleToCollectionTypesLinksHook', () => {
@@ -6,7 +6,7 @@ describe('i18n | contentManagerHooks | addLocaleToCollectionTypesLinksHook', () 
 
   beforeEach(() => {
     store = {
-      ...fixtures.store.state,
+      ...Fixtures.Store.state,
       i18n_locales: { locales: [] },
     };
     store.rbacProvider.allPermissions = [];

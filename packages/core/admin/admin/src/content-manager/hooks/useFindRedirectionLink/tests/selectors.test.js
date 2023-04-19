@@ -1,11 +1,11 @@
-import { fixtures } from '@strapi/admin-test-utils/lib';
+import { Fixtures } from '@strapi/admin-test-utils';
 import selectMenuLinks from '../selectors';
 
 describe('CONTENT MANAGER | Containers | CollectionTypeFormWrapper | selectors', () => {
   let store;
 
   beforeEach(() => {
-    store = { ...fixtures.store.state };
+    store = { ...Fixtures.Store.state };
   });
 
   describe('selectMenuLinks', () => {
