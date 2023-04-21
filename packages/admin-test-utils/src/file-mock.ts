@@ -1,1 +1,1 @@
-export default () => 'test-file-stub';
+export default 'IMAGE_MOCK';

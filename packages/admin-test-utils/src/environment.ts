@@ -133,26 +133,34 @@ document.createRange = () => {
  * -----------------------------------------------------------------------------------------------*/
 
 class LocalStorageMock {
-  store: Record<string, string>;
+  store: Map<string, string>;
 
   constructor() {
-    this.store = {};
+    this.store = new Map();
   }
 
   clear() {
-    this.store = {};
+    this.store.clear();
   }
 
   getItem(key: string) {
-    return this.store[key] || null;
+    /**
+     * We return null to avoid returning `undefined`
+     * because `undefined` is not a valid JSON value.
+     */
+    return this.store.get(key) ?? null;
   }
 
-  setItem(key: string, value: string) {
-    this.store[key] = String(value);
+  setItem(key: string, value: unknown) {
+    this.store.set(key, String(value));
   }
 
   removeItem(key: string) {
-    delete this.store[key];
+    this.store.delete(key);
+  }
+
+  get length() {
+    return this.store.size;
   }
 }
 
