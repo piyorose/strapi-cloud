@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   CheckPermissions,
+  useQueryParams,
   useTracking,
   formatContentTypeData,
   LinkButton,
@@ -11,7 +12,6 @@ import {
 import { useIntl } from 'react-intl';
 import { ContentLayout, Box, Grid, GridItem, Main, Flex } from '@strapi/design-system';
 import { Pencil, Layer } from '@strapi/icons';
-import get from 'lodash/get';
 
 import { InjectionZone } from '../../../shared/components';
 import permissions from '../../../permissions';
@@ -29,7 +29,7 @@ import GridRow from './GridRow';
 import { selectCurrentLayout, selectAttributesLayout, selectCustomFieldUids } from './selectors';
 import { useEntity } from '../../hooks/useEntity';
 import selectCrudReducer from '../../sharedReducers/crudReducer/selectors';
-import { resetProps, setDataStructures } from '../../sharedReducers/crudReducer/actions';
+import { initForm, resetProps, setDataStructures } from '../../sharedReducers/crudReducer/actions';
 import { useFindRedirectionLink } from '../../hooks';
 
 const cmPermissions = permissions.contentManager;
@@ -40,6 +40,7 @@ const EditView = ({ allowedActions, isSingleType, goBack, slug, id, userPermissi
   const { trackUsage } = useTracking();
   const { formatMessage } = useIntl();
   const dispatch = useDispatch();
+  const [{ rawQuery }] = useQueryParams();
   const { layout, formattedContentTypeLayout, customFieldUids } = useSelector((state) => ({
     layout: selectCurrentLayout(state),
     formattedContentTypeLayout: selectAttributesLayout(state),
@@ -80,36 +81,31 @@ const EditView = ({ allowedActions, isSingleType, goBack, slug, id, userPermissi
   }, [dispatch]);
 
   React.useEffect(() => {
-    const componentsDataStructure = Object.keys(layout.components).reduce((acc, current) => {
-      const defaultComponentForm = createDefaultForm(
-        get(layout, ['components', current, 'attributes'], {}),
-        layout.components
-      );
+    const { components, contentType } = layout;
+    const componentsDataStructure = Object.keys(components).reduce((acc, current) => {
+      const defaultComponentForm = createDefaultForm(components[current].attributes, components);
 
-      acc[current] = formatContentTypeData(
-        defaultComponentForm,
-        layout.components[current],
-        layout.components
-      );
+      acc[current] = formatContentTypeData(defaultComponentForm, components[current], components);
 
       return acc;
     }, {});
 
-    const contentTypeDataStructure = createDefaultForm(
-      layout.contentType.attributes,
-      layout.components
-    );
+    const contentTypeDataStructure = createDefaultForm(contentType.attributes, components);
 
     const contentTypeDataStructureFormatted = formatContentTypeData(
       contentTypeDataStructure,
-      layout.contentType,
-      layout.components
+      contentType,
+      components
     );
 
     dispatch(setDataStructures(componentsDataStructure, contentTypeDataStructureFormatted));
   }, [layout, dispatch]);
 
-  if (isLazyLoading) {
+  React.useEffect(() => {
+    dispatch(initForm(rawQuery));
+  }, [dispatch, rawQuery]);
+
+  if (isLoading || isLazyLoading) {
     return <LoadingIndicatorPage />;
   }
 

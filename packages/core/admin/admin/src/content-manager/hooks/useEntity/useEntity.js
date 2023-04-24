@@ -65,10 +65,7 @@ export function useEntity(layout, id) {
       retry: false,
 
       onSuccess(data) {
-        // this is hell
-        const normalizedData = formatContentTypeData(data, contentType, components);
-
-        dispatch(getDataSucceeded(normalizedData));
+        dispatch(getDataSucceeded(formatContentTypeData(data, contentType, components)));
 
         // the admin app can not know before it has fetched a single-type (it doesn't have an id)
         // if it has been created or not. Therefore `isCreating` needs to be
