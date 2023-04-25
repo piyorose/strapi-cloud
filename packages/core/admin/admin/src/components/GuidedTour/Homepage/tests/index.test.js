@@ -254,13 +254,13 @@ describe('GuidedTour Homepage', () => {
         outline: none;
       }
 
-      .c27 svg {
+      .c27 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c27 svg > g,
-      .c27 svg path {
+      .c27 > svg > g,
+      .c27 > svg path {
         fill: #ffffff;
       }
 
@@ -399,13 +399,13 @@ describe('GuidedTour Homepage', () => {
         outline: none;
       }
 
-      .c16 svg {
+      .c16 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c16 svg > g,
-      .c16 svg path {
+      .c16 > svg > g,
+      .c16 > svg path {
         fill: #ffffff;
       }
 

@@ -13,13 +13,13 @@ exports[`Wysiwyg render and actions buttons should render the Wysiwyg 1`] = `
   padding: 8px;
 }
 
-.c12 {
-  padding-right: 16px;
-  padding-left: 16px;
-}
-
-.c14 {
+.c9 {
+  background: #ffffff;
+  padding-right: 12px;
   padding-left: 12px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
 }
 
 .c19 {
@@ -121,18 +121,53 @@ exports[`Wysiwyg render and actions buttons should render the Wysiwyg 1`] = `
   flex-direction: row;
 }
 
-.c8 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 12px;
 }
 
 .c20 {
@@ -221,13 +256,13 @@ exports[`Wysiwyg render and actions buttons should render the Wysiwyg 1`] = `
   outline: none;
 }
 
-.c21 svg {
+.c21 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c21 svg > g,
-.c21 svg path {
+.c21 > svg > g,
+.c21 > svg path {
   fill: #ffffff;
 }
 
@@ -326,13 +361,19 @@ exports[`Wysiwyg render and actions buttons should render the Wysiwyg 1`] = `
   fill: #32324d;
 }
 
-.c9 {
-  position: relative;
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c11 {
   border: 1px solid #dcdce4;
-  padding-right: 12px;
-  border-radius: 4px;
-  background: #ffffff;
-  overflow: hidden;
   min-height: 2rem;
   outline: none;
   box-shadow: 0;
@@ -342,61 +383,41 @@ exports[`Wysiwyg render and actions buttons should render the Wysiwyg 1`] = `
   transition-duration: 0.2s;
 }
 
-.c9:focus-within {
+.c11[aria-disabled='true'] {
+  color: #666687;
+}
+
+.c11:focus-visible {
+  outline: none;
+}
+
+.c11:focus-within {
   border: 1px solid #4945ff;
   box-shadow: #4945ff 0px 0px 0px 2px;
 }
 
-.c15 {
-  background: transparent;
-  border: none;
-  position: relative;
-  z-index: 1;
+.c16 > svg {
+  width: 0.375rem;
 }
 
-.c15 svg {
-  height: 0.6875rem;
-  width: 0.6875rem;
-}
-
-.c15 svg path {
+.c16 > svg > path {
   fill: #666687;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: none;
-  border: none;
+  gap: 4px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-.c16 svg {
-  width: 0.375rem;
-}
-
-.c10 {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 100%;
-  background: transparent;
-  border: none;
-}
-
-.c10:focus {
-  outline: none;
-}
-
-.c10[data-disabled] {
-  cursor: not-allowed;
-}
-
-.c11 {
-  width: 100%;
+.c38[data-state='checked'] .c2 {
+  font-weight: bold;
+  color: #4945ff;
 }
 
 .c23 svg > g,
@@ -852,65 +873,61 @@ exports[`Wysiwyg render and actions buttons should render the Wysiwyg 1`] = `
             class=""
           >
             <div
-              class="c8"
+              class="c0"
             >
+              <label
+                class="c2 c3 c8"
+                for="selectTitle"
+              />
               <div
-                class="c7 c9"
+                aria-autocomplete="none"
+                aria-controls="radix-0"
+                aria-describedby="selectTitle-hint selectTitle-error"
+                aria-expanded="false"
+                class="c9 c10 c11"
+                data-state="closed"
+                dir="ltr"
+                id="selectTitle"
+                overflow="hidden"
+                role="combobox"
+                tabindex="0"
               >
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="selectTitle selectTitle-label selectTitle-content"
-                  aria-required="false"
-                  class="c10"
-                  id="selectTitle"
-                  role="combobox"
-                  type="button"
-                />
-                <div
-                  class="c6 c11"
+                <span
+                  class="c12"
                 >
-                  <div
-                    class="c7"
+                  <span
+                    class="c2 c13"
                   >
-                    <div
-                      class="c12"
+                    <span
+                      class="c14"
                     >
-                      <span
-                        class="c2 c13"
-                        id="selectTitle-content"
-                      >
-                        Add a title
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="c7"
+                      Add a title
+                    </span>
+                  </span>
+                </span>
+                <span
+                  class="c15"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="c16"
                   >
-                    <button
-                      aria-hidden="true"
-                      class="c14 c15 c16"
-                      tabindex="-1"
-                      title="Carret Down Button"
-                      type="button"
+                    <svg
+                      fill="none"
+                      height="1rem"
+                      viewBox="0 0 14 8"
+                      width="1rem"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="none"
-                        height="1rem"
-                        viewBox="0 0 14 8"
-                        width="1rem"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M14 .889a.86.86 0 0 1-.26.625L7.615 7.736A.834.834 0 0 1 7 8a.834.834 0 0 1-.615-.264L.26 1.514A.861.861 0 0 1 0 .889c0-.24.087-.45.26-.625A.834.834 0 0 1 .875 0h12.25c.237 0 .442.088.615.264a.86.86 0 0 1 .26.625Z"
-                          fill="#32324D"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+                      <path
+                        clip-rule="evenodd"
+                        d="M14 .889a.86.86 0 0 1-.26.625L7.615 7.736A.834.834 0 0 1 7 8a.834.834 0 0 1-.615-.264L.26 1.514A.861.861 0 0 1 0 .889c0-.24.087-.45.26-.625A.834.834 0 0 1 .875 0h12.25c.237 0 .442.088.615.264a.86.86 0 0 1 .26.625Z"
+                        fill="#32324D"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </span>
               </div>
             </div>
           </div>

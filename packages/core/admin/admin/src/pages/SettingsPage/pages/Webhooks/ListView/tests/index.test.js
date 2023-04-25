@@ -246,13 +246,13 @@ describe('Admin | containers | ListView', () => {
         outline: none;
       }
 
-      .c44 svg {
+      .c44 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c44 svg > g,
-      .c44 svg path {
+      .c44 > svg > g,
+      .c44 > svg path {
         fill: #ffffff;
       }
 
@@ -617,13 +617,13 @@ describe('Admin | containers | ListView', () => {
         outline: none;
       }
 
-      .c11 svg {
+      .c11 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c11 svg > g,
-      .c11 svg path {
+      .c11 > svg > g,
+      .c11 > svg path {
         fill: #ffffff;
       }
 

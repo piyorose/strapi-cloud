@@ -255,13 +255,13 @@ describe('ADMIN | PAGES | AUTH | ResetPassword', () => {
         outline: none;
       }
 
-      .c4 svg {
+      .c4 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c4 svg > g,
-      .c4 svg path {
+      .c4 > svg > g,
+      .c4 > svg path {
         fill: #ffffff;
       }
 
@@ -524,16 +524,25 @@ describe('ADMIN | PAGES | AUTH | ResetPassword', () => {
         align-items: center;
         -webkit-text-decoration: none;
         text-decoration: none;
+        gap: 8px;
         position: relative;
         outline: none;
+      }
+
+      .c38 svg {
+        font-size: 0.625rem;
       }
 
       .c38 svg path {
         fill: #4945ff;
       }
 
-      .c38 svg {
-        font-size: 0.625rem;
+      .c38:hover {
+        color: #7b79ff;
+      }
+
+      .c38:active {
+        color: #271fe0;
       }
 
       .c38:after {

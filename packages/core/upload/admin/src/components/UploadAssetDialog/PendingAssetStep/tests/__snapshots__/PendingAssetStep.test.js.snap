@@ -275,13 +275,13 @@ exports[`PendingAssetStep snapshots the component with valid cards 1`] = `
   outline: none;
 }
 
-.c7 svg {
+.c7 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c7 svg > g,
-.c7 svg path {
+.c7 > svg > g,
+.c7 > svg path {
   fill: #ffffff;
 }
 

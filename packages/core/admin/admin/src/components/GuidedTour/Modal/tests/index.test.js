@@ -285,13 +285,13 @@ describe('<GuidedTourModal />', () => {
         outline: none;
       }
 
-      .c8 svg {
+      .c8 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c8 svg > g,
-      .c8 svg path {
+      .c8 > svg > g,
+      .c8 > svg path {
         fill: #ffffff;
       }
 

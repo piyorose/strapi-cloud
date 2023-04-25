@@ -288,13 +288,13 @@ describe('ADMIN | Pages | API TOKENS | ListPage', () => {
         outline: none;
       }
 
-      .c30 svg {
+      .c30 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c30 svg > g,
-      .c30 svg path {
+      .c30 > svg > g,
+      .c30 > svg path {
         fill: #ffffff;
       }
 
@@ -525,13 +525,13 @@ describe('ADMIN | Pages | API TOKENS | ListPage', () => {
         outline: none;
       }
 
-      .c9 svg {
+      .c9 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c9 svg > g,
-      .c9 svg path {
+      .c9 > svg > g,
+      .c9 > svg path {
         fill: #ffffff;
       }
 
@@ -580,16 +580,25 @@ describe('ADMIN | Pages | API TOKENS | ListPage', () => {
         align-items: center;
         -webkit-text-decoration: none;
         text-decoration: none;
+        gap: 8px;
         position: relative;
         outline: none;
+      }
+
+      .c40 svg {
+        font-size: 0.625rem;
       }
 
       .c40 svg path {
         fill: #4945ff;
       }
 
-      .c40 svg {
-        font-size: 0.625rem;
+      .c40:hover {
+        color: #7b79ff;
+      }
+
+      .c40:active {
+        color: #271fe0;
       }
 
       .c40:after {

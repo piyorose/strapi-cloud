@@ -116,13 +116,13 @@ exports[`RemoveAssetDialog snapshots the component 1`] = `
   outline: none;
 }
 
-.c19 svg {
+.c19 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c19 svg > g,
-.c19 svg path {
+.c19 > svg > g,
+.c19 > svg path {
   fill: #ffffff;
 }
 

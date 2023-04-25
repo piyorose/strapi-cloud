@@ -191,13 +191,13 @@ exports[`ApplicationInfosPage | AddLogoDialog shoud render from computer tab and
   outline: none;
 }
 
-.c21 svg {
+.c21 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c21 svg > g,
-.c21 svg path {
+.c21 > svg > g,
+.c21 > svg path {
   fill: #ffffff;
 }
 
@@ -710,13 +710,13 @@ exports[`ApplicationInfosPage | AddLogoDialog shoud render from url tab and matc
   outline: none;
 }
 
-.c23 svg {
+.c23 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c23 svg > g,
-.c23 svg path {
+.c23 > svg > g,
+.c23 > svg path {
   fill: #ffffff;
 }
 

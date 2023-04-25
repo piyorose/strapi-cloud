@@ -277,13 +277,13 @@ describe('Plugin | Users and Permissions | RoleListPage', () => {
         outline: none;
       }
 
-      .c12 svg {
+      .c12 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c12 svg > g,
-      .c12 svg path {
+      .c12 > svg > g,
+      .c12 > svg path {
         fill: #ffffff;
       }
 

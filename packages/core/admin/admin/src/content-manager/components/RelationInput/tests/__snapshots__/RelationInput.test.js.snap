@@ -296,13 +296,13 @@ exports[`Content-Manager || RelationInput should render and match snapshot 1`] =
   outline: none;
 }
 
-.c23 svg {
+.c23 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c23 svg > g,
-.c23 svg path {
+.c23 > svg > g,
+.c23 > svg path {
   fill: #ffffff;
 }
 

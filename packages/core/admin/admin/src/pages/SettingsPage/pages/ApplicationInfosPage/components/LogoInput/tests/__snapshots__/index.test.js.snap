@@ -338,13 +338,13 @@ exports[`ApplicationsInfosPage || LogoInput from computer should render upload m
   outline: none;
 }
 
-.c16 svg {
+.c16 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c16 svg > g,
-.c16 svg path {
+.c16 > svg > g,
+.c16 > svg path {
   fill: #ffffff;
 }
 
@@ -1237,13 +1237,13 @@ exports[`ApplicationsInfosPage || LogoInput from url should render upload modal 
   outline: none;
 }
 
-.c16 svg {
+.c16 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c16 svg > g,
-.c16 svg path {
+.c16 > svg > g,
+.c16 > svg path {
   fill: #ffffff;
 }
 
@@ -2020,13 +2020,13 @@ exports[`ApplicationsInfosPage || LogoInput logo input should match snapshot 1`]
   outline: none;
 }
 
-.c15 svg {
+.c15 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c15 svg > g,
-.c15 svg path {
+.c15 > svg > g,
+.c15 > svg path {
   fill: #ffffff;
 }
 

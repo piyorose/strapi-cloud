@@ -237,13 +237,13 @@ describe('ADMIN | PAGES | AUTH | BaseLogin', () => {
         outline: none;
       }
 
-      .c34 svg {
+      .c34 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c34 svg > g,
-      .c34 svg path {
+      .c34 > svg > g,
+      .c34 > svg path {
         fill: #ffffff;
       }
 
@@ -567,16 +567,25 @@ describe('ADMIN | PAGES | AUTH | BaseLogin', () => {
         align-items: center;
         -webkit-text-decoration: none;
         text-decoration: none;
+        gap: 8px;
         position: relative;
         outline: none;
+      }
+
+      .c39 svg {
+        font-size: 0.625rem;
       }
 
       .c39 svg path {
         fill: #4945ff;
       }
 
-      .c39 svg {
-        font-size: 0.625rem;
+      .c39:hover {
+        color: #7b79ff;
+      }
+
+      .c39:active {
+        color: #271fe0;
       }
 
       .c39:after {

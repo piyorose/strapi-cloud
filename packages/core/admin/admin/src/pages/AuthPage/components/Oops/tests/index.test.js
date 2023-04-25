@@ -161,13 +161,13 @@ describe('ADMIN | PAGES | AUTH | Oops', () => {
         outline: none;
       }
 
-      .c4 svg {
+      .c4 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c4 svg > g,
-      .c4 svg path {
+      .c4 > svg > g,
+      .c4 > svg path {
         fill: #ffffff;
       }
 
@@ -292,16 +292,25 @@ describe('ADMIN | PAGES | AUTH | Oops', () => {
         align-items: center;
         -webkit-text-decoration: none;
         text-decoration: none;
+        gap: 8px;
         position: relative;
         outline: none;
+      }
+
+      .c21 svg {
+        font-size: 0.625rem;
       }
 
       .c21 svg path {
         fill: #4945ff;
       }
 
-      .c21 svg {
-        font-size: 0.625rem;
+      .c21:hover {
+        color: #7b79ff;
+      }
+
+      .c21:active {
+        color: #271fe0;
       }
 
       .c21:after {

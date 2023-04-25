@@ -100,13 +100,13 @@ describe('ADMIN | Pages | Settings | Advanced Settings', () => {
         box-shadow: 0px 1px 4px rgba(33,33,52,0.1);
       }
 
-      .c24 {
-        padding-right: 16px;
-        padding-left: 16px;
-      }
-
-      .c26 {
+      .c21 {
+        background: #ffffff;
+        padding-right: 12px;
         padding-left: 12px;
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
       }
 
       .c34 {
@@ -205,6 +205,55 @@ describe('ADMIN | Pages | Settings | Advanced Settings', () => {
         gap: 4px;
       }
 
+      .c22 {
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        gap: 16px;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
+
+      .c24 {
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        gap: 16px;
+      }
+
+      .c27 {
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        gap: 12px;
+      }
+
       .c37 {
         -webkit-align-items: center;
         -webkit-box-align: center;
@@ -288,13 +337,13 @@ describe('ADMIN | Pages | Settings | Advanced Settings', () => {
         outline: none;
       }
 
-      .c9 svg {
+      .c9 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c9 svg > g,
-      .c9 svg path {
+      .c9 > svg > g,
+      .c9 > svg path {
         fill: #ffffff;
       }
 
@@ -525,13 +574,8 @@ describe('ADMIN | Pages | Settings | Advanced Settings', () => {
         box-shadow: #4945ff 0px 0px 0px 2px;
       }
 
-      .c21 {
-        position: relative;
+      .c23 {
         border: 1px solid #dcdce4;
-        padding-right: 12px;
-        border-radius: 4px;
-        background: #ffffff;
-        overflow: hidden;
         min-height: 2.5rem;
         outline: none;
         box-shadow: 0;
@@ -541,61 +585,41 @@ describe('ADMIN | Pages | Settings | Advanced Settings', () => {
         transition-duration: 0.2s;
       }
 
-      .c21:focus-within {
+      .c23[aria-disabled='true'] {
+        color: #666687;
+      }
+
+      .c23:focus-visible {
+        outline: none;
+      }
+
+      .c23:focus-within {
         border: 1px solid #4945ff;
         box-shadow: #4945ff 0px 0px 0px 2px;
       }
 
-      .c27 {
-        background: transparent;
-        border: none;
-        position: relative;
-        z-index: 1;
+      .c28 > svg {
+        width: 0.375rem;
       }
 
-      .c27 svg {
-        height: 0.6875rem;
-        width: 0.6875rem;
-      }
-
-      .c27 svg path {
+      .c28 > svg > path {
         fill: #666687;
       }
 
-      .c28 {
+      .c26 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        background: none;
-        border: none;
+        gap: 4px;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
       }
 
-      .c28 svg {
-        width: 0.375rem;
-      }
-
-      .c22 {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        width: 100%;
-        background: transparent;
-        border: none;
-      }
-
-      .c22:focus {
-        outline: none;
-      }
-
-      .c22[data-disabled] {
-        cursor: not-allowed;
-      }
-
-      .c23 {
-        width: 100%;
+      .c48[data-state='checked'] .c5 {
+        font-weight: bold;
+        color: #4945ff;
       }
 
       .c16 {
@@ -827,64 +851,55 @@ describe('ADMIN | Pages | Settings | Advanced Settings', () => {
                             Default role for authenticated users
                           </label>
                           <div
-                            class="c4 c21"
+                            aria-autocomplete="none"
+                            aria-controls="radix-0"
+                            aria-describedby="1-hint 1-error"
+                            aria-expanded="false"
+                            aria-label="Default role for authenticated users"
+                            class="c21 c22 c23"
+                            data-state="closed"
+                            dir="ltr"
+                            id="1"
+                            overflow="hidden"
+                            role="combobox"
+                            tabindex="0"
                           >
-                            <button
-                              aria-describedby="1-hint"
-                              aria-expanded="false"
-                              aria-haspopup="listbox"
-                              aria-labelledby="1 1-label 1-content"
-                              aria-required="false"
-                              class="c22"
-                              id="1"
-                              role="combobox"
-                              type="button"
-                              value="authenticated"
-                            />
-                            <div
-                              class="c2 c23"
+                            <span
+                              class="c24"
                             >
-                              <div
-                                class="c4"
+                              <span
+                                class="c5 c25"
                               >
-                                <div
-                                  class="c24"
+                                <span
+                                  class="c26"
                                 >
-                                  <span
-                                    class="c5 c25"
-                                    id="1-content"
-                                  >
-                                    Authenticated
-                                  </span>
-                                </div>
-                              </div>
-                              <div
-                                class="c4"
+                                  Authenticated
+                                </span>
+                              </span>
+                            </span>
+                            <span
+                              class="c27"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="c28"
                               >
-                                <button
-                                  aria-hidden="true"
-                                  class="c26 c27 c28"
-                                  tabindex="-1"
-                                  title="Carret Down Button"
-                                  type="button"
+                                <svg
+                                  fill="none"
+                                  height="1rem"
+                                  viewBox="0 0 14 8"
+                                  width="1rem"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    fill="none"
-                                    height="1rem"
-                                    viewBox="0 0 14 8"
-                                    width="1rem"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      clip-rule="evenodd"
-                                      d="M14 .889a.86.86 0 0 1-.26.625L7.615 7.736A.834.834 0 0 1 7 8a.834.834 0 0 1-.615-.264L.26 1.514A.861.861 0 0 1 0 .889c0-.24.087-.45.26-.625A.834.834 0 0 1 .875 0h12.25c.237 0 .442.088.615.264a.86.86 0 0 1 .26.625Z"
-                                      fill="#32324D"
-                                      fill-rule="evenodd"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
-                            </div>
+                                  <path
+                                    clip-rule="evenodd"
+                                    d="M14 .889a.86.86 0 0 1-.26.625L7.615 7.736A.834.834 0 0 1 7 8a.834.834 0 0 1-.615-.264L.26 1.514A.861.861 0 0 1 0 .889c0-.24.087-.45.26-.625A.834.834 0 0 1 .875 0h12.25c.237 0 .442.088.615.264a.86.86 0 0 1 .26.625Z"
+                                    fill="#32324D"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
                           </div>
                           <p
                             class="c5 c29"

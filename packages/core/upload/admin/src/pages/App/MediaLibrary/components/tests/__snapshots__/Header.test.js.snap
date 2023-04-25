@@ -104,13 +104,13 @@ exports[`Header renders 1`] = `
   outline: none;
 }
 
-.c13 svg {
+.c13 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c13 svg > g,
-.c13 svg path {
+.c13 > svg > g,
+.c13 > svg path {
   fill: #ffffff;
 }
 

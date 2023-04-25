@@ -57,13 +57,13 @@ exports[`<ColorPickerInput /> renders and matches the snapshot 1`] = `
   outline: none;
 }
 
-.c5 svg {
+.c5 > svg {
   height: 12px;
   width: 12px;
 }
 
-.c5 svg > g,
-.c5 svg path {
+.c5 > svg > g,
+.c5 > svg path {
   fill: #ffffff;
 }
 

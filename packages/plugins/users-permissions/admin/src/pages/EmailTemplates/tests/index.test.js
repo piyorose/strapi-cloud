@@ -196,13 +196,13 @@ describe('ADMIN | Pages | Settings | Email Templates', () => {
         outline: none;
       }
 
-      .c27 svg {
+      .c27 > svg {
         height: 12px;
         width: 12px;
       }
 
-      .c27 svg > g,
-      .c27 svg path {
+      .c27 > svg > g,
+      .c27 > svg path {
         fill: #ffffff;
       }
 
