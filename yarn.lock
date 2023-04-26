@@ -7483,7 +7483,7 @@ __metadata:
     redux: ^4.2.1
     reselect: ^4.1.7
     styled-components: 5.3.3
-    swagger-ui-dist: 4.18.1
+    swagger-ui-dist: 4.18.3
     yaml: 1.10.2
     yup: ^0.32.9
   peerDependencies:
@@ -29561,10 +29561,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swagger-ui-dist@npm:4.18.1":
-  version: 4.18.1
-  resolution: "swagger-ui-dist@npm:4.18.1"
-  checksum: 0db5e4ff9f9592763981e24122a5364a9069426b8a7bb41a43455a997b0fd0ae9366ca61f4507502fdb2cb3a356d235d0041fad4085f3d1c42f7fe9260011f3a
+"swagger-ui-dist@npm:4.18.3":
+  version: 4.18.3
+  resolution: "swagger-ui-dist@npm:4.18.3"
+  checksum: 1b0b42801bcd79588fa73f235e57b4a4c258466ac92d992e0015df8ace565b7dd16b54366ad1a72e34a73cbc855c28fb8a28bc5f3403f2bdf13e1beb16d1cca3
   languageName: node
   linkType: hard
 
